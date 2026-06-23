@@ -84,11 +84,3 @@ I used an LLM to pre-label examples using my four label definitions: `analysis`,
 
 **Reason:** The post reports a match outcome with a performance detail, but it does not explain the tactical reason behind the result.
 
-<div>
-    <a href="https://www.loom.com/share/28fc69ea675748c39cb1803708b6fb2a">
-      <p>Building a Soccer Post Tech Classifier - Watch Video</p>
-    </a>
-    <a href="https://www.loom.com/share/28fc69ea675748c39cb1803708b6fb2a">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/28fc69ea675748c39cb1803708b6fb2a-b1d28d1a1128a159-full-play.gif#t=0.1">
-    </a>
-  </div>
