@@ -26,7 +26,7 @@ Example:
 + Luka Modric is not a great World Cup player because he only scored 2 goals in 18 games. This is a good example of cherry picking because it ignores the fact that Modric is a midfielder and not a striker, and that he is known for his playmaking ability. The one-stat post above is borderline; the framing is accusatory and the stat is selected for effect rather than as part of an argument -> hot-take.
 
 
-Data collection plan: I will collect the examples on X by searching for the FIFA World cup 2026 hashtag and sorting by "latest". I will collect 200 examples per label, for a total of 800 examples. If a label is underrepresented after 200 examples, I will increase the number of examples I collect per label. 
+Data collection plan: I will collect the examples on X by searching for the FIFA World cup 2026 hashtag and sorting by "latest". I will collect around 50 examples per label, for a total of 200 examples. If a label is underrepresented after 50 examples, I will increase the number of examples I collect per label. 
 
 Evaluation metrics: 
 - Accuracy: measures the overall correctness of the model
@@ -50,3 +50,39 @@ AI Tool Plan:
 - Label stress-testing: Use ChatGPT to generate 5-10 examples for each label, and see if the model can classify them correctly. 
 - Annotation assistance: Use ChatGPT to pre-label a batch of examples before reviewing them myself. I will label 5 examples per label using ChatGPT, and if the model is accurate, I will use it to label the rest of the examples. 
 - Failure analysis: Use ChatGPT to analyze the list of wrong predictions and identify patterns. I will look for patterns in the types of posts that the model misclassifies, and I will use this information to improve the model.
+
+## Difficult Labeling Examples
+
+### 1. `analysis` vs. `hot_take`
+
+**Post:**  
+“Portugal’s transition game under Martinez depends too much on Ronaldo’s hold-up play; their build-up from the back is slower than in 2022.”
+
+**Possible labels:** `analysis`, `hot_take`  
+**Final label:** `analysis`
+
+**Decision:** I labeled this as `analysis` because it gives a specific soccer reason involving transition play, Ronaldo’s role, and comparison to 2022. Even though it criticizes Portugal, the post explains the claim instead of only making a dramatic opinion.
+
+---
+
+### 2. `hot_take` vs. `analysis`
+
+**Post:**  
+“Egypt beating stronger African sides shows they're dark horses for 2026.”
+
+**Possible labels:** `hot_take`, `analysis`  
+**Final label:** `hot_take`
+
+**Decision:** I labeled this as `hot_take` because it uses some evidence, but the reasoning is too broad. It does not explain which teams Egypt beat, what tactical strengths they showed, or why that makes them a serious World Cup threat.
+
+---
+
+### 3. `reaction` vs. `hot_take`
+
+**Post:**  
+“Portugal throwing it away... typical Ronaldo team.”
+
+**Possible labels:** `reaction`, `hot_take`  
+**Final label:** `reaction`
+
+**Decision:** I labeled this as `reaction` because the main purpose is emotional frustration during or after a match moment. It contains a small broader claim about Ronaldo’s team, but the overall tone is still an immediate emotional response rather than a developed opinion.
