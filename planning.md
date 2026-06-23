@@ -51,38 +51,44 @@ AI Tool Plan:
 - Annotation assistance: Use ChatGPT to pre-label a batch of examples before reviewing them myself. I will label 5 examples per label using ChatGPT, and if the model is accurate, I will use it to label the rest of the examples. 
 - Failure analysis: Use ChatGPT to analyze the list of wrong predictions and identify patterns. I will look for patterns in the types of posts that the model misclassifies, and I will use this information to improve the model.
 
+## AI Usage for Annotation
+
+I used an LLM to pre-label examples using my four label definitions: `analysis`, `hot_take`, `reaction`, and `updates`. I then manually reviewed every example and corrected labels when needed. The AI helped speed up the first pass, but I made the final annotation decisions, especially for ambiguous cases.
+
 ## Difficult Labeling Examples
 
-### 1. `analysis` vs. `hot_take`
+### 1. Cherry-picked statistic or narrative
 
-**Post:**  
-“Portugal’s transition game under Martinez depends too much on Ronaldo’s hold-up play; their build-up from the back is slower than in 2022.”
+**Example:** “Argentina only wins because of Messi. Team is average.”
 
 **Possible labels:** `analysis`, `hot_take`  
-**Final label:** `analysis`
-
-**Decision:** I labeled this as `analysis` because it gives a specific soccer reason involving transition play, Ronaldo’s role, and comparison to 2022. Even though it criticizes Portugal, the post explains the claim instead of only making a dramatic opinion.
-
----
-
-### 2. `hot_take` vs. `analysis`
-
-**Post:**  
-“Egypt beating stronger African sides shows they're dark horses for 2026.”
-
-**Possible labels:** `hot_take`, `analysis`  
 **Final label:** `hot_take`
 
-**Decision:** I labeled this as `hot_take` because it uses some evidence, but the reasoning is too broad. It does not explain which teams Egypt beat, what tactical strengths they showed, or why that makes them a serious World Cup threat.
+**Reason:** The post makes a broad claim without balanced evidence. It focuses only on Messi and ignores Argentina’s squad, tactics, and team structure.
 
----
+### 2. Emotional reaction mixed with judgment
 
-### 3. `reaction` vs. `hot_take`
-
-**Post:**  
-“Portugal throwing it away... typical Ronaldo team.”
+**Example:** “VAR saved them there. Controversial but correct?”
 
 **Possible labels:** `reaction`, `hot_take`  
 **Final label:** `reaction`
 
-**Decision:** I labeled this as `reaction` because the main purpose is emotional frustration during or after a match moment. It contains a small broader claim about Ronaldo’s team, but the overall tone is still an immediate emotional response rather than a developed opinion.
+**Reason:** The post reacts to a specific match moment. It includes judgment, but it does not make a broader unsupported claim.
+
+### 3. Factual result with implied interpretation
+
+**Example:** “Spain high possession leads to victory.”
+
+**Possible labels:** `updates`, `analysis`  
+**Final label:** `updates`
+
+**Reason:** The post reports a match outcome with a performance detail, but it does not explain the tactical reason behind the result.
+
+<div>
+    <a href="https://www.loom.com/share/28fc69ea675748c39cb1803708b6fb2a">
+      <p>Building a Soccer Post Tech Classifier - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/28fc69ea675748c39cb1803708b6fb2a">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/28fc69ea675748c39cb1803708b6fb2a-b1d28d1a1128a159-full-play.gif#t=0.1">
+    </a>
+  </div>
